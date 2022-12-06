@@ -6,7 +6,7 @@ import List from "./components/List";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const data = {
+const resultadosPacientesData = {
   labels: ["Paciente depresivo", "Paciente sin síntomas"],
   datasets: [
     {
@@ -25,6 +25,33 @@ const data = {
         "rgba(54, 162, 235, 1)",
         // "rgba(255, 206, 86, 1)",
         // "rgba(75, 192, 192, 1)",
+        // "rgba(153, 102, 255, 1)",
+        // "rgba(255, 159, 64, 1)",
+      ],
+      borderWidth: 1,
+    },
+  ],
+};
+
+const tiposUsuariosData = {
+  labels: ["Usuarios anónimos", "Usuarios registrados"],
+  datasets: [
+    {
+      label: "# de usuarios",
+      data: [38, 10 /* 3, 5, 2, 3 */],
+      backgroundColor: [
+        // "rgba(255, 99, 132, 0.2)",
+        // "rgba(54, 162, 235, 0.2)",
+        "rgba(255, 206, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        // "rgba(153, 102, 255, 0.2)",
+        // "rgba(255, 159, 64, 0.2)",
+      ],
+      borderColor: [
+        // "rgba(255, 99, 132, 1)",
+        // "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
         // "rgba(153, 102, 255, 1)",
         // "rgba(255, 159, 64, 1)",
       ],
@@ -271,7 +298,10 @@ const App = () => {
 
                 <div className="border-t border-gray-200 bg-gray-50 grid md:grid-cols-3 gap-6">
                   <div className="px-8 py-10">
-                    <Pie data={data} />
+                    <Pie data={resultadosPacientesData} />
+                  </div>
+                  <div className="px-8 py-10">
+                    <Pie data={tiposUsuariosData} />
                   </div>
                 </div>
               </div>
